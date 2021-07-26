@@ -5,18 +5,18 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://www.bkdev.co',
-    title: 'Brooklyn Development Co',
+    title: 'Brooklyn Development Co.',
   },
   plugins: [
     'gatsby-plugin-postcss',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: process.env.GA_TRACKING_ID,
       },
     },
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
