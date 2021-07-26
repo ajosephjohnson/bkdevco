@@ -1,19 +1,10 @@
 import * as React from 'react';
 import { FC } from 'react';
-import { Helmet } from 'react-helmet';
+import { Layout } from '../components/Layout';
 import 'tailwindcss/tailwind.css';
 
 const IndexPage: FC<{}> = () => {
-  return (
-    <>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>Brooklyn Development Co.</title>
-        <link rel="canonical" href="http://bkdev.co/" />
-      </Helmet>
-      <div>Hello world</div>
-    </>
-  );
+  return <Layout>Hello World!</Layout>;
 };
 
 export default IndexPage;

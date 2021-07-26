@@ -2,7 +2,7 @@ import * as React from 'react';
 import { FC } from 'react';
 import { Link } from 'gatsby';
 
-const NotFoundPage: FC<{}> = () => {
+export const NotFoundPage: FC<{}> = () => {
   return (
     <main>
       <title>Not found</title>
@@ -19,5 +19,3 @@ const NotFoundPage: FC<{}> = () => {
     </main>
   );
 };
-
-export default NotFoundPage;
