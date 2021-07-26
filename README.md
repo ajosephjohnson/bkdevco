@@ -9,6 +9,7 @@ My portfolio site.
 - **[Gatsby.js](https://www.gatsbyjs.com/docs/)**
 - **[TypeScript](https://www.typescriptlang.org/docs/)**
 - **[Docker](https://docs.docker.com/)**
+- **[Tailwind CSS](https://tailwindcss.com/docs/)**
 
 ## 🚀 Development
 
@@ -34,3 +35,11 @@ My portfolio site.
 3.  **Start developing.**
 
     The application is now running at `http://localhost:3000`!
+
+### Other tools
+
+**Open an interactive shell in docker container**
+
+    ```shell
+    ./shell.sh
+    ```
