@@ -28,7 +28,7 @@ My portfolio site.
 2.  **Run the local development application.**
 
     ```shell
-    ./develop.sh
+    docker-compose up -d
     ```
 
 3.  **Start developing.**
