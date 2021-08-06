@@ -23,13 +23,13 @@ My portfolio site.
 1.  **Build container and install application dependencies.**
 
     ```shell
-    ./install.sh
+    ./scripts/install.sh
     ```
 
 2.  **Run the local development application.**
 
     ```shell
-    docker-compose up -d
+    ./scripts/start.sh
     ```
 
 3.  **Start developing.**
@@ -38,8 +38,14 @@ My portfolio site.
 
 ### Other tools
 
-**Open an interactive shell in docker container**
+**Open an interactive shell in docker container (container must be running)**
 
     ```shell
-    ./shell.sh
+    ./scripts/shell.sh
+    ```
+
+**Run TypeScript type checking**
+
+    ```shell
+    ./scripts/type-check.sh
     ```
