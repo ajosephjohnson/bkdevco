@@ -4,7 +4,7 @@ import { Layout } from '../components/Layout';
 import 'tailwindcss/tailwind.css';
 
 const IndexPage: FC<{}> = () => {
-  return <Layout>Hello World!</Layout>;
+  return <Layout />;
 };
 
 export default IndexPage;
