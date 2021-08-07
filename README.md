@@ -40,12 +40,12 @@ My portfolio site.
 
 **Open an interactive shell in docker container (container must be running)**
 
-    ```shell
-    ./scripts/shell.sh
-    ```
+```shell
+./scripts/shell.sh
+```
 
 **Run TypeScript type checking**
 
-    ```shell
-    ./scripts/type-check.sh
-    ```
+```shell
+./scripts/type-check.sh
+```
