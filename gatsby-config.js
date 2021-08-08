@@ -2,6 +2,10 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
+process.on('warning', warning => {
+  console.log(warning.stack);
+});
+
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://www.bkdev.co',
@@ -15,11 +19,9 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
-      resolve: 'gatsby-plugin-eslint',
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        stages: ['develop'],
-        extensions: ['js', 'jsx', 'ts', 'tsx'],
-        exclude: ['node_modules', '.cache', 'public'],
+        icon: 'src/images/favicon.jpg',
       },
     },
     {
@@ -29,9 +31,11 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: 'gatsby-plugin-eslint',
       options: {
-        icon: 'src/images/favicon.jpg',
+        stages: ['develop'],
+        extensions: ['js', 'jsx', 'ts', 'tsx'],
+        exclude: ['node_modules', '.cache', 'public'],
       },
     },
   ],
