@@ -16,27 +16,15 @@ export const TopBar: FC<{}> = () => {
           />
         </Link>
         <ul className="flex flex-grow justify-end text-white font-bold text-lg">
-          <li className="mx-4">
-            <a
-              href="#services"
-              className="px-2 py-1 border-b-2 border-transparent hover:border-white transition hover:opacity-90">
-              SERVICES
-            </a>
-          </li>
-          <li className="mx-4">
-            <a
-              href="#testimonials"
-              className="px-2 py-1 border-b-2 border-transparent hover:border-white transition hover:opacity-90">
-              TESTIMONIALS
-            </a>
-          </li>
-          <li className="mx-4">
-            <a
-              href="#past-projects"
-              className="px-2 py-1 border-b-2 border-transparent hover:border-white transition hover:opacity-90">
-              PAST PROJECTS
-            </a>
-          </li>
+          {['services', 'testimonials', 'past-projects'].map(id => (
+            <li className="mx-4" key={id}>
+              <a
+                href={`#${id}`}
+                className="px-2 py-1 border-b-2 border-transparent hover:border-white transition hover:opacity-90">
+                {id.split('-').join(' ').toUpperCase()}
+              </a>
+            </li>
+          ))}
         </ul>
         <a
           href="https://calendly.com"
