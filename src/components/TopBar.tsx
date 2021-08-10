@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 
 export const TopBar: FC<{}> = () => {
   return (
-    <div className="fixed bg-transparent z-10 w-full">
+    <div className="fixed bg-transparent z-20 w-full font-sans">
       <div className="container h-24 mx-auto px-5 flex items-center">
         <Link to="/" className="flex group">
           <div className="rounded-full w-16 h-16 overflow-hidden bg-white border border-black">
@@ -18,7 +18,7 @@ export const TopBar: FC<{}> = () => {
               height={50}
             />
           </div>
-          <h1 className="font-sans text-2xl ml-5 text-white font-bold border-b-2 border-transparent group-hover:border-theme-lighter-green transition-colors transition-border-b group-hover:text-theme-lighter-green">
+          <h1 className="text-2xl ml-5 text-white font-bold border-b-2 border-transparent group-hover:border-theme-lighter-green transition-colors transition-border-b group-hover:text-theme-lighter-green">
             BROOKLYN
             <br />
             DEVELOPMENT CO.
