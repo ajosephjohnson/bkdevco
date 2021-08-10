@@ -3,6 +3,8 @@ import { FC } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import { Link } from 'gatsby';
 
+const SECTION_NAV_LINKS = ['services', 'testimonials', 'past-projects'];
+
 export const TopBar: FC<{}> = () => {
   return (
     <div className="fixed bg-transparent z-20 w-full font-sans">
@@ -16,7 +18,7 @@ export const TopBar: FC<{}> = () => {
           />
         </Link>
         <ul className="flex flex-grow justify-end text-white font-bold text-lg">
-          {['services', 'testimonials', 'past-projects'].map(id => (
+          {SECTION_NAV_LINKS.map(id => (
             <li className="mx-4" key={id}>
               <a
                 href={`#${id}`}
