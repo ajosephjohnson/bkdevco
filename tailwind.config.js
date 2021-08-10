@@ -9,7 +9,6 @@ module.exports = {
       colors: {
         'theme-primary-green': '#5D8A5C',
         'theme-light-green': '#508C4F',
-        'theme-lighter-green': '#EFF3Ef',
       },
       fontFamily: {
         sans: ['"Work Sans"', ...defaultTheme.fontFamily.sans],
@@ -18,7 +17,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      opacity: ['hover'],
+    },
   },
   plugins: [],
 };
