@@ -2,20 +2,30 @@ import * as React from 'react';
 import { FC } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import { Link } from 'gatsby';
+import { useScrollPosition } from '../hooks';
 
 const SECTION_NAV_LINKS = ['services', 'testimonials', 'past-projects'];
 
 export const TopBar: FC<{}> = () => {
+  const { y: windowYPosition } = useScrollPosition();
+
+  // For every 2px scrolled the top bar gains 1% of opacity until fully opaque.
+  const backgroundOpacity =
+    windowYPosition <= 200
+      ? `bg-opacity-${
+          windowYPosition === 0 ? 0 : Math.floor(windowYPosition / 2)
+        }`
+      : 'bg-opacity-100 shadow-2xl';
+
   return (
-    <div className="fixed bg-transparent z-20 w-full font-sans">
+    <div
+      className={
+        'fixed bg-theme-primary-green z-20 w-full font-sans transition-box-shadow duration-500 ' +
+        backgroundOpacity
+      }>
       <div className="container px-5 h-24 mx-auto flex items-center">
         <Link to="/" className="px-1 py-1 transition-opacity hover:opacity-80">
-          <StaticImage
-            src="https://s3.amazonaws.com/bkdev.co/logo-branding-white.png"
-            alt="Main logo - Brooklyn Development Co."
-            loading="eager"
-            height={75}
-          />
+          <MemoizedLogoImage />
         </Link>
         <ul className="flex flex-grow justify-end text-white font-bold text-lg">
           {SECTION_NAV_LINKS.map(id => (
@@ -42,3 +52,17 @@ export const TopBar: FC<{}> = () => {
     </div>
   );
 };
+
+const LogoImage: FC<{}> = () => (
+  <StaticImage
+    src="https://s3.amazonaws.com/bkdev.co/logo-branding-white.png"
+    alt="Main logo - Brooklyn Development Co."
+    loading="eager"
+    height={75}
+  />
+);
+
+/**
+ * Memozied to eliminate initial flicker on state change due to scroll handler
+ */
+const MemoizedLogoImage: FC<{}> = React.memo(LogoImage);
