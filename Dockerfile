@@ -7,7 +7,7 @@ WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 
 # install and cache app dependencies using npm
-ADD package.json package-lock.json /app/
+ADD package.json yarn.lock /app/
 RUN npm install
 
 # Copy all frontend files to new "app" folder
