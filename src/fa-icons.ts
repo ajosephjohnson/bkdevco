@@ -5,7 +5,12 @@ import {
   faInstagram,
   faLinkedinIn,
 } from '@fortawesome/free-brands-svg-icons';
-import { faPhoneAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import {
+  faPhoneAlt,
+  faEnvelope,
+  faCheck,
+  faCode,
+} from '@fortawesome/free-solid-svg-icons';
 
 library.add(
   faTwitter,
@@ -13,5 +18,7 @@ library.add(
   faInstagram,
   faLinkedinIn,
   faPhoneAlt,
-  faEnvelope
+  faEnvelope,
+  faCheck,
+  faCode
 );
